@@ -1,0 +1,24 @@
+{
+    "name": "acf/rented-properties-listings",
+    "title": "Rented Properties Listings",
+    "description": "Theme styled Rented Properties Listings block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["rented properties", "column", "listings"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "rented-properties-listings.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "rented-properties-listings/preview.jpg"
+            }
+        }
+    }
+}

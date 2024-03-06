@@ -1,0 +1,66 @@
+/* Colors */
+    $colorScheme : (
+        // Color scheme 1
+        //1         //2         //3        //4        //5        //6        //7         //8        //9        //10       //11       //12       //13        //14
+        (#032C1F, #223628, #C9CDBE, #000000, #98AA6C, #204535, #475467, #EAECF0, #F9FAFB, #667085, #E1C120, #D0D5DD, #101828, #B3EF00),
+        // Color scheme 2
+        (#002755, #FFFFFF, #000000)
+    );
+    // set active color scheme
+    $activeColorScheme : 1;
+    $darkColor : #000000;
+    $lightColor : #FFFFFF;
+    $greenColor: #4E6953;
+    $canvasBackground: #FFFFFF;
+    $errorColor: #e21010;
+    $successColor: #204535;
+    $maskColor : #000000;
+    $maskOpacity : 0.8;
+
+/* Typography */
+    $fontScheme : (
+        // Font scheme 1
+        ('Old Standard TT', 'Gudea'),
+    );
+    // set active font scheme
+    $activeFontScheme : 1;
+    // default typography config
+    $fallbackFont : serif;
+    $defaultFontSize : 14px;
+    $defaultLineHeight : 14px;
+
+/* Measurements */
+    $pageMaxWidth : 100%;
+    $containerMaxWidth: 1280px;
+    $contentMaxWidth: 100%;
+
+    // Gutters
+    $gutter : 20px;
+    $gutterThin : 10px;
+    $gutterMedium : 30px;
+    $gutterDivider : 40px;
+    $gutterWide : 50px;
+    $gutterWider : 60px;
+    $gutterProp : 5%;
+
+    // Breakpoints
+    $bp_desktop : 1640px;
+    $bp_desktopMedium : 1440px;
+    $bp_desktopSmall : 1278px;
+    $bp_mobileMenuShift : 1200px;
+    $bp_tabletLandscape : 1024px;
+    $bp_tabletPortrait3 : 940px;
+    $bp_tabletPortrait2 : 880px;
+    $bp_tabletPortrait : 820px;
+    $bp_mobileLandscape : 767px;
+    $bp_mobileLandscape1 : 768px;
+    $bp_mobile : 600px;
+    $bp_mobileMedium : 415px;
+    $bp_mobileSmall : 320px;
+
+/* CSS Easings */
+    $easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
+    $easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    $easeInOutExpo: cubic-bezier(1, 0, 0, 1);
+
+

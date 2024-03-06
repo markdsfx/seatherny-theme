@@ -1,0 +1,24 @@
+{
+    "name": "acf/coming-soon-listings",
+    "title": "Coming Soon Listings",
+    "description": "Theme styled Coming Soon Listings block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["column", "listings", "coming soon"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "coming-soon-listings.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "coming-soon-listings/preview.jpg"
+            }
+        }
+    }
+}

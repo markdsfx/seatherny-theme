@@ -1,0 +1,18 @@
+.block--custom-layout__about-core-values {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .grid-values {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 0px;
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-column-gap: 10px;
+        }
+    }
+
+}

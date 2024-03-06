@@ -1,0 +1,249 @@
+h1{
+    @include typography(getFont(1), 110px, 1em, 400, inherit);
+    letter-spacing: 0.5px;
+    font-style: italic;
+    max-width: 950px;
+    box-sizing: border-box;
+    margin: 0 auto 55px;
+
+    @media(max-width: $bp_mobile){
+        font-size: 52px;
+        margin: 0 auto 37px;
+    }
+}
+h2{
+    @include typography(getFont(1), 66px, 1.05em, 400, inherit);
+    letter-spacing: 0.5px;
+    font-style: italic;
+    max-width: $containerMaxWidth;
+    box-sizing: border-box;
+    margin: 0 auto 40px;
+
+    @media(max-width: $bp_mobile){
+        font-size: 40px;
+        margin: 0 auto 26px;
+    }
+}
+h3{
+    @include typography(getFont(1), 64px, 1.15em, 400, inherit);
+    letter-spacing: 0.5px;
+    max-width: $containerMaxWidth;
+    box-sizing: border-box;
+    margin: 0 auto 22px;
+
+    @media(max-width: $bp_mobile){
+        font-size: 40px;
+        margin: 0 auto 26px;
+    }
+}
+h4 {
+    @include typography(getFont(1), 48px, 1.15em, 400, inherit);
+    letter-spacing: 0.5px;
+    max-width: $containerMaxWidth;
+    box-sizing: border-box;
+    margin: 0 auto 20px;
+
+    @media(max-width: $bp_mobile){
+        font-size: 32px;
+        margin: 0 auto 17px;
+    }
+}
+h5{
+    @include typography(getFont(1), 18px, 1.15em, 400, inherit);
+    letter-spacing: 0.5px;
+    max-width: $containerMaxWidth;
+    box-sizing: border-box;
+    margin: 0 auto 20px;
+
+    @media(max-width: $bp_mobile){
+        font-size: 14px;
+    }
+}
+
+blockquote{
+    @include typography(getFont(1), 24px, 1.15em, 400, inherit);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    max-width: $containerMaxWidth;
+    box-sizing: border-box;
+    margin: 0 auto 20px;
+
+    @media(max-width: $bp_mobile){
+        font-size: 18px;
+    }
+}
+
+ul, ol, li, a, small, p{
+    @include typography(getFont(2), 18px, 1.5em, 400, inherit);
+    max-width: $containerMaxWidth;
+    box-sizing: border-box;
+    margin: 0 auto 1.35em;
+}
+
+ul, ol{
+    list-style-position: outside;
+    padding-left: 15px;
+}
+
+ul, ol, li{
+    margin: 0 0 1em;
+}
+
+a{
+    @include typography(inherit, inherit, inherit, inherit, inherit);
+}
+
+b, strong{
+    font-weight: 700;
+}
+
+em{
+    font-style: italic;
+}
+
+img, iframe, svg, video{
+    max-width: 100%;
+}
+
+.btn {
+    font-family: getFont(2);
+    border-radius: 20px;
+    text-decoration: none;
+    transition-timing-function: ease-out;
+
+    
+    &-primary {
+        font-weight: 400;
+        padding: 14px 30px;
+        font-size: 16px;
+        border: 1px solid #E0C120;
+        background-color: #E0C120;
+        color: #FFF;
+        @include transition(0.45s);
+
+        @media (max-width: $bp_mobile) {
+            font-size: 14px;
+            padding: 12px 15px;
+        }
+
+        &:hover {
+            background-color: #4E6953;
+            border: 1px solid #4E6953;
+
+        }
+    }
+    &-inquire {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 34px;
+        border: 1px solid #E0C120;
+        background-color: #E0C120;
+        color: #FFF;
+        @include transition(0.45s);
+
+        @media (max-width: $bp_mobile) {
+            font-size: 14px;
+            padding: 5px 15px;
+        }
+
+        &:hover {
+            background-color: #4E6953;
+            border: 1px solid #4E6953;
+
+        }
+    }
+
+
+}
+
+
+.text {
+
+    &-center {
+        text-align: center;
+    }
+}
+
+// Hide on specific screen size
+
+.set-hidden-on {
+    
+    &-mobile {
+        @media (max-width: $bp_mobile) {
+            display: none;
+        }
+    }
+}
+
+// Remove Forminator Edit Link
+.forminator-edit-module {
+    display: none;
+}
+
+.block--custom-layout__rented-properties-listings {
+    padding-bottom: 100px;
+}
+
+.section-header {
+    padding-top: 30px;
+    h2 {
+        font-family: getFont(2);
+        font-size: 24px;
+        line-height: normal;
+        font-style: normal;
+        font-weight: 400;
+        color: #000;
+        margin-bottom: 24px;
+
+        &::after {
+            content: "";
+            display: block;
+            border-bottom: 2px solid #000; 
+            margin-top: 8px; 
+            width: 75px;
+        }
+    }
+}
+
+.page-header-section {
+    h1 {
+        font-size: 48px;
+        max-width: 100%;
+        text-align: center;
+
+        &::after {
+            content: "";
+            display: block;
+            border-bottom: 2px solid #e2e2e2;
+            margin-top: 20px;
+            width: 50px;
+            text-align: center;
+            left: calc(50% - 30px);
+            position: absolute;
+        }
+    }
+}
+
+.text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    margin-bottom: 40px;
+
+    h2 {
+        font-family: getFont(2);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.25;
+        margin-bottom: 24px;
+    }
+    p {
+        font-family: getFont(2);
+        text-transform: none;
+        font-size: 18px;
+    }
+}
+
+

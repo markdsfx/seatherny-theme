@@ -1,0 +1,24 @@
+{
+    "name": "acf/about-core-values",
+    "title": "About Core Values",
+    "description": "Theme styled WYSIWYG block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["core values", "about", "rich text"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "about-core-values.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "about-core-values/preview.jpg"
+            }
+        }
+    }
+}

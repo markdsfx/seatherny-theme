@@ -1,0 +1,87 @@
+.block--custom-layout__featured-listings {
+    padding: 40px 0 60px 0;
+    overflow: hidden;
+    
+    .search-form-wrapper {
+        margin-bottom: 50px;
+        width: 70%;
+        margin: 0 auto 50px auto;
+
+        @media (max-width: $bp_mobileMenuShift) {
+            width: 100%;
+            margin: 0 auto 25px auto;
+        }
+
+        .is-form-style-3 {
+
+            label {
+                width: calc(100% - 0px)!important;
+            }
+            
+            input.is-search-input {
+                border-right: 1px solid #CCC !important;
+                border-radius: 50px;
+                height: 60px;
+                padding: 0 20px;
+            }
+
+            button.is-search-submit {
+                position: absolute;
+            }
+
+            .is-search-icon {
+                background: transparent;
+                border: 0;
+                margin-top: 12px;
+                margin-left: -95px;
+            }
+        }
+
+    }
+
+    .featured-listings-header {
+        h2 {
+            font-family: getFont(1);
+            font-size: 50px;
+            line-height: normal;
+            font-style: italic;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 0;
+
+            @media (max-width: $bp_mobile) {
+                font-size: 25px;
+            }
+        }
+        p {
+            color: #000;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            @media (max-width: $bp_mobile) {
+                font-size: 16px;
+            }
+            
+        }
+    }
+
+
+    .owl-stage-outer {
+        overflow: hidden;
+    }
+
+    
+
+    .owl-dots {
+        .owl-dot {
+            span {
+                height: 15px;
+                width: 15px;
+            }
+        }
+    }
+
+
+}

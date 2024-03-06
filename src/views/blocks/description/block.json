@@ -1,0 +1,24 @@
+{
+    "name": "acf/description",
+    "title": "Description",
+    "description": "Theme styled WYSIWYG block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["description", "text", "rich text"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "description.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "description/preview.jpg"
+            }
+        }
+    }
+}

@@ -1,0 +1,121 @@
+.block--custom-layout__wysiwyg {
+    color: getColor(1);
+
+
+    a{
+        @include transition(0.45s);
+
+        &:focus,
+        &:hover{
+            color: getColor(5);
+        }
+    }
+
+
+
+
+
+
+    p, ol, li, span{
+        font-family: getFont(1);
+        color: rgba(0,0,0,0.8);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        margin: 0 auto 1em;
+
+        @media(max-width: 979px){
+            font-size: 16px;
+        }
+
+        @media(max-width: 600px){
+            font-size: 14px;
+        }
+    }
+
+    img, iframe, svg, video{
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    img{
+        display: block;
+        width: 100%;
+        margin: 80px auto 80px;
+
+        @media(max-width: 979px){
+            margin: 40px auto 40px;
+        }
+    }
+
+    &.block-theme-dark{
+        color: $lightColor;
+
+        p, ol, li, span{
+            color: $lightColor;
+        }
+
+        a{
+            &:focus,
+            &:hover{
+                color: #a4da02;
+            }
+        }
+    }
+    .header-vertical-padding {
+        padding: 96px 0;
+        @media (max-width: $bp_mobile) {
+            padding: 64px 0;
+        }
+    }
+
+    .body-block {
+        padding-bottom: 79px;
+    }
+
+    .wysiwyg-content {
+        
+
+
+        @media (max-width: $bp_mobile ) {
+            padding: 64px 0;
+        }
+
+        h2 {
+            color: var(--primary-700, #A4DA02);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px; /* 155.556% */
+            margin-bottom: 12px;
+        }
+        .title {
+            color: var(--gray-900, #101828);
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 60px; /* 125% */
+            letter-spacing: -0.96px;
+            margin-bottom: 24px;
+
+            &-large {
+                font-size: 48px;
+            }
+            
+            &-medium {
+                font-size: 36px;
+            }
+        }
+        p {
+            color: var(--gray-600, #475467);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 150% */
+            margin-bottom: 0;
+        }
+    }
+
+
+}

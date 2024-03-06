@@ -1,0 +1,24 @@
+{
+    "name": "acf/blogs",
+    "title": "Blogs",
+    "description": "Theme styled Blogs block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["blogs", "column", "news"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "blogs.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "blogs/preview.jpg"
+            }
+        }
+    }
+}

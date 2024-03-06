@@ -1,0 +1,24 @@
+{
+    "name": "acf/featured-listings",
+    "title": "Featured Listings",
+    "description": "Theme styled Featured Listings block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["featured", "listings", "column"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "featured-listings.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "featured-listings/preview.jpg"
+            }
+        }
+    }
+}

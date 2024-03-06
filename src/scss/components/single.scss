@@ -1,0 +1,332 @@
+.page-blocks__single{
+    & > *:not(.block--custom-layout){
+        max-width: 1094px;
+        padding: 0 24px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    img, iframe, svg, video{
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.post-default {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    margin: 0 auto;
+
+    .title-wrapper {
+        h1 {
+            font-size: 64px !important;
+            max-width: 100%;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            &::after {
+                content: "";
+                display: block;
+                border-bottom: 2px solid #e2e2e2;
+                margin-top: 20px;
+                width: 80px;
+                text-align: center;
+                left: calc(50% - 50px);
+                position: absolute;
+            }
+        }
+        p {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+    }
+}
+
+.post-content {
+    padding-top: 200px;
+
+
+    .single-listings-main-wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 55%;
+        grid-template-rows: 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+
+        @media (max-width: $bp_tabletLandscape) {
+            display: block;
+        }
+
+        .left-panel {
+            #search-form {
+                position: relative;
+                margin-bottom: 30px;
+
+                #search-input {
+                    font-family: getFont(2);
+                    font-size: 16px;
+                    border: 1px solid #ccc!important;
+                    border-radius: 50px;
+                    height: 60px;
+                    padding: 0 20px;
+                    width: 100%;
+                    outline: 0;
+                }
+
+                #search-icon {
+                    right: 0;
+                    position: absolute;
+                    background: transparent;
+                    border: 0;
+                    top: 18px;
+                    margin-right: 10px;
+                }
+            }
+
+            #loading-gif {
+                text-align: center;
+
+                img {
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .right-panel {
+            .container-block {
+                max-width: 100% !important;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+
+
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .title-wrapper {
+            width: 75%;
+        }
+        .cta-wrapper {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: flex-start;
+
+            .btn-inquire {
+                margin-bottom: 10px;
+            }
+
+            .price {
+                color: #000;
+                font-family: "Gudea",serif;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                margin: 0;
+            }
+        }
+
+        .property {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+    
+        .address {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    
+        .additional-information {
+            display: inline-flex;
+    
+            .unit-info {
+                margin-right: 24px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+
+                small {
+                    font-size: 16px;
+                    margin-bottom: 0;
+                }
+
+                .icon {
+                    display: inline-block !important;
+                    width: 20px !important;
+                    margin-left: 7px;
+                }
+            }
+    
+
+        }
+
+
+    }
+
+
+
+    #related-listings {
+
+        .highlighted {
+            .list-item {
+                border: 2px solid #E0C11F;
+            }
+        }
+
+        .listing-link {
+            text-decoration: none;
+        }
+
+        .list-item {
+            display: flex;
+            border-radius: 10px;
+            border: 0 solid rgba(224,193,31,0);
+            background: #fffefe;
+            box-shadow: 1px 4px 4px 3px #0000000f;
+            overflow: hidden;
+            margin-bottom: 20px;
+    
+            .list-details {
+                width: 60%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 13px;
+
+                .listing-name {
+                    a {
+                        text-decoration: none;
+                    }
+                    .title {
+                        font-family: getFont(2);
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 600;
+                        margin-bottom: 0;
+                    }
+                    .unit-code {
+                        font-family: getFont(2);
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                    }
+                }
+
+
+                .additional-information {
+                    display: inline-flex;
+            
+                    .unit-info {
+                        margin-right: 24px;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: center;
+
+                        small {
+                            font-size: 16px;
+                            margin-bottom: 0;
+                        }
+
+                        .icon {
+                            display: inline-block !important;
+                            width: 20px !important;
+                            margin-left: 7px;
+                        }
+                    }
+                }
+
+                .listing-rate {
+                    span {
+                        font-family: getFont(2);
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 600;
+                    }
+                }
+
+            }
+            .listing-featured-image {
+                height: 120px;
+                width: 40%;
+
+                .grid-img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    padding: 0;
+                }
+            }
+        }
+
+        .numeric-pagination {
+            text-align: center;
+            padding-top: 20px;
+
+            .page-numbers {
+                font-family: getFont(2);
+                margin: 0 10px;
+            }
+        }
+    }
+
+}
+
+
+
+.contact-inquiry-wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .form-header {
+        background: #4E6953;
+        padding: 20px;
+        font-family: 'Gudea', sans-serif;
+        text-align: center;
+        color: #FFF;
+    }
+
+    form#forminator-module-188 {
+        padding: 30px 30px !important;
+        background: #DDD;
+
+        .forminator-row {
+            margin-bottom: 15px;
+
+            .forminator-field {
+                label {
+                    font-family: getFont(2);
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+    
+            .forminator-textarea,
+            .forminator-input {
+                background-color: #FFF;
+                font-family: getFont(2);
+                border-radius: 10px;
+            }
+    
+            .forminator-button-submit {
+                border-radius: 20px !important;
+                background-color: #E0C11F !important;
+                font-family: 'Gudea', sans-serif !important;
+            }
+        }
+
+
+    }
+}

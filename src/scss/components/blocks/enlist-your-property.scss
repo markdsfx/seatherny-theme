@@ -1,0 +1,48 @@
+.block--custom-layout__enlist-your-property {
+    padding-top: 91px;
+    padding-bottom: 143px;
+
+    .block-header{
+        h2 {
+            font-size: 48px;
+            line-height: 1.2;
+
+            &::after {
+                content: "";
+                display: block;
+                border-bottom: 2px solid #000; 
+                margin-top: 8px; 
+                width: 75px;
+            }
+        }
+    }
+
+    form#forminator-module-135 {
+        padding: 40px 40px!important;
+        background: #DDD;
+
+        .forminator-label {
+            font-family: getFont(2);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .forminator-input,
+        .forminator-textarea {
+            background-color: #fff;
+            font-family: "Gudea",serif;
+        }
+
+        .forminator-consent__label p {
+            font-family: getFont(2);
+        }
+
+        .forminator-button-submit {
+            border-radius: 20px!important;
+            background-color: #e0c11f!important;
+            font-family: "Gudea",sans-serif!important;
+            padding: 10px 30px;
+        }
+        
+    }
+}

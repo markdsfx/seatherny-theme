@@ -1,0 +1,24 @@
+{
+    "name": "acf/gallery",
+    "title": "Gallery",
+    "description": "Theme styled Gallery block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["gallery", "image"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "gallery.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "gallery/preview.jpg"
+            }
+        }
+    }
+}

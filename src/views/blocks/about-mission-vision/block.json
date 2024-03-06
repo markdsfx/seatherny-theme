@@ -1,0 +1,24 @@
+{
+    "name": "acf/about-mission-vision",
+    "title": "About Mission and Vision",
+    "description": "Theme styled About Mission/Vision Text block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["mission", "vision", "rich text"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "about-mission-vision.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "wysiwyg/about-mission-vision.jpg"
+            }
+        }
+    }
+}

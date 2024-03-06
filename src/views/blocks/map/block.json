@@ -1,0 +1,24 @@
+{
+    "name": "acf/map",
+    "title": "Map",
+    "description": "Theme styled Map block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["map", "locator", "rich text"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "map.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "map/preview.jpg"
+            }
+        }
+    }
+}

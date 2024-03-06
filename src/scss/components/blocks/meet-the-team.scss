@@ -1,0 +1,42 @@
+.block--custom-layout__meet-the-team {
+
+    .team-grid {
+        padding-top: 43px;
+        padding-bottom: 43px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 46px;
+        grid-row-gap: 0px;
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            .team-rounded-img {
+                height: 250px;
+                width: 250px;
+                border-radius: 50%;
+                margin: 30px auto;
+            }
+            h3 {
+                color: #000;
+                font-family: Inter;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                margin-bottom: 0;
+            }
+            p {
+                color: #000;
+                font-family: Inter;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+}

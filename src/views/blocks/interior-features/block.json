@@ -1,0 +1,24 @@
+{
+    "name": "acf/interior-features",
+    "title": "Interior Features",
+    "description": "Theme styled Interior Features block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["interior", "features", "rich text"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "interior-features.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "interior-features/preview.jpg"
+            }
+        }
+    }
+}

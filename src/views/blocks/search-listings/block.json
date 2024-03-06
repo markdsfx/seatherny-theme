@@ -1,0 +1,24 @@
+{
+    "name": "acf/search-listings",
+    "title": "Search Listings",
+    "description": "Theme styled Search Listings block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["search", "listings", "column"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "search-listings.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "search-listings/preview.jpg"
+            }
+        }
+    }
+}

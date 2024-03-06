@@ -1,0 +1,24 @@
+{
+    "name": "acf/hero",
+    "title": "Hero",
+    "description": "Theme styled Hero block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["hero", "text", "rich text"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "hero.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "hero/preview.jpg"
+            }
+        }
+    }
+}

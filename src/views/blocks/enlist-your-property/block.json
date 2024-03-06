@@ -1,0 +1,24 @@
+{
+    "name": "acf/enlist-your-property",
+    "title": "Enlist your property",
+    "description": "Theme styled Enlist your property block.",
+    "category": "custom-layout",
+    "icon": "text",
+    "keywords": ["enlist-your-property", "text", "rich text"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "enlist-your-property.php"
+    },
+    "align": "full",
+    "supports" : {
+        "anchor" : true
+    },
+    "example": {
+        "attributes": {
+            "mode" : "preview",
+            "data" : {
+                "preview_image" : "enlist-your-property/preview.jpg"
+            }
+        }
+    }
+}

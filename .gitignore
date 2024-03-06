@@ -1,0 +1,5 @@
+node_modules
+dist/
+cache/
+!index.html
+.DS_store
