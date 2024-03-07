@@ -83,122 +83,63 @@
     add_action('acf/init', 'my_acf_init');
 
 
-
-    function enqueue_ajax_related_listings_script() {
-        wp_enqueue_script('ajax-related-listings', get_template_directory_uri() . '/path/to/ajax-related-listings.js', array('jquery'), null, true);
-        wp_localize_script('ajax-related-listings', 'ajaxurl', admin_url('admin-ajax.php'));
-    }
+    function my_theme_scripts() {
+        wp_enqueue_script( 'jquery' );
+        wp_enqueue_script( 'my-ajax-pagination', \SDEV\Utils::getThemeResourcePath('dist/ajax-pagination.js'), array( 'jquery' ), '1.0', true );
+        wp_enqueue_style( 'my-ajax-pagination', \SDEV\Utils::getThemeResourcePath('dist/ajax-pagination.css'), array(), '1.0' );
     
-    add_action('wp_enqueue_scripts', 'enqueue_ajax_related_listings_script');
+        // Localize the required data
+        $ajax_data = array(
+            'ajax_url' => admin_url( 'admin-ajax.php' ), // WordPress AJAX URL
+            // Add any other data you need to pass to the JavaScript file
+        );
+        wp_localize_script( 'my-ajax-pagination', 'my_ajax_obj', $ajax_data );
+    }
+    add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 
-
-    function load_related_listings_ajax() {
-        $posts_per_page = -1;
-        $current_post_id = (is_singular()) ? get_the_ID() : 0;
+    function my_ajax_pagination() {
+        $paged = isset($_POST['paged']) ? $_POST['paged'] : 1; // Get the current page number
     
         $args = array(
-            'post_type' => 'listings',
-            'posts_per_page' => $posts_per_page,
-            'paged' => $_POST['page'],
-            'cat' => '3',
-            's' => sanitize_text_field($_POST['search'])
+            'post_type' => 'listings', // Change this to your desired post type
+            'posts_per_page' => 1, // Number of posts to display per page
+            'paged' => $paged
         );
     
         $query = new WP_Query($args);
     
-        ob_start();
-        if ($query->have_posts()) :
-            while ($query->have_posts()) : $query->the_post();
-
-                // Display your listing content here ?>
-                <a href="<?php the_permalink(); ?>" class="listing-link">
-                    <div class="list-item item-<?php the_ID(); ?>" >
-                        <div class="list-details">
-                            <div class="listing-name">
-                                <p class="title"><?php the_title(); ?></p>
-                                <?php 
-                                    $unit_code = get_post_meta(get_the_ID(), 'code', true); 
-                                    if ( !empty($unit_code) ) : ?>
-                                    <span class="unit-code"><?= $unit_code ?></span>
-                                <?php endif; ?>
-                            </div>
-
-                            <div class="additional-information">
-                                <?php 
-                                $bedroom = get_post_meta(get_the_ID(), 'no_of_bedroom', true);
-                                if ( !empty($bedroom) ) : ?>
-                                <div class="bedroom unit-info">
-                                    <small><?= $bedroom ?></small>
-                                    <img class="icon" src="<?= \SDEV\Utils::getThemeResourcePath('assets/images/bedroom-prop.png') ?>">
-                                </div>
-                                <?php endif; ?>
-
-                                <?php 
-                                $parking = get_post_meta(get_the_ID(), 'parking_slot', true);
-                                if ( !empty($parking) ) : ?>
-                                <div class="parking unit-info">
-                                    <small><?= $parking ?></small>
-                                    <img class="icon" src="<?= \SDEV\Utils::getThemeResourcePath('assets/images/parking-prop.png') ?>">
-                                </div>
-                                <?php endif; ?>
-
-                                <?php 
-                                $sqm = get_post_meta(get_the_ID(), 'sqm', true);
-                                if ( !empty($sqm) ) : ?>
-                                <div class="sqm unit-info">
-                                    <small><?= $sqm ?></small>
-                                    <img class="icon" src="<?= \SDEV\Utils::getThemeResourcePath('assets/images/sqm-prop.png') ?>">
-                                </div>
-                                <?php endif; ?>
-                            </div>
-                            
-                            <div class="listing-rate">
-                                <?php 
-                                    $rate = get_post_meta(get_the_ID(), 'price', true); 
-                                    if ( !empty($rate) ) : ?>
-                                    <span><?= $rate ?></span>
-                                <?php endif; ?>
-                            </div>
-                            
-                        </div>
-                        <div class="listing-featured-image">
-                            <?php $url = wp_get_attachment_url( get_post_thumbnail_id(), 'thumbnail' ); ?>
-
-                            <?php if ( !empty($url) ) : ?>
-                                <img class="grid-img" src="<?php echo $url ?>" />
-                            <?php else : ?>
-                                <img class="grid-img" src="<?= \SDEV\Utils::getThemeResourcePath('assets/images/placeholder.jpg') ?>" />
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </a>
-            <?php endwhile;
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                // Output your post listing HTML here
+                the_title();
+            }
     
-        echo '<div class="numeric-pagination">';
-        $pagination_args = array(
-            'total' => $query->max_num_pages,
-            'current' => max(1, $_POST['page']),
-            'mid_size' => 3,
-
-        );
-        
-        echo paginate_links($pagination_args);
-        echo '</div>';
-
-
+            // Output the pagination links
+            $max_pages = $query->max_num_pages;
+            $current_page = max(1, $paged);
     
-            wp_reset_postdata();
-        else :
-            echo 'No more listings';
-        endif;
+            echo '<div class="nav-links">';
+            echo get_previous_posts_link('Previous', $query->max_num_pages);
+            echo paginate_links(array(
+                'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+                'format' => '?paged=%#%',
+                'current' => $current_page,
+                'total' => $max_pages,
+                'prev_next' => true,
+                'prev_text' => 'Previous',
+                'next_text' => 'Next'
+            ));
+            echo '</div>';
     
-        $response = ob_get_clean(); // Get the captured HTML
-
-        echo $response;
+            // Output a placeholder for the maximum number of pages
+            echo "<input type='hidden' id='max_pages' value='$max_pages'>";
+        }
+    
+        wp_reset_postdata();
         die();
     }
-    
-    add_action('wp_ajax_load_related_listings', 'load_related_listings_ajax');
-    add_action('wp_ajax_nopriv_load_related_listings', 'load_related_listings_ajax');
+    add_action('wp_ajax_my_ajax_pagination', 'my_ajax_pagination');
+    add_action('wp_ajax_nopriv_my_ajax_pagination', 'my_ajax_pagination');
 
 ?>

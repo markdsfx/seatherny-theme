@@ -40,10 +40,8 @@
                             <img src="<?= \SDEV\Utils::getThemeResourcePath('assets/images/icons8-loading.gif') ?>" alt="Loading...">
                         </div>
 
-                        <div class="ajax-list-wrap">
-                            <div id="related-listings">
-
-                            </div>
+                        <div id="ajax-posts-container">
+                            <!-- Your initial listing content will be loaded here -->
                         </div>
 
                     </div>
